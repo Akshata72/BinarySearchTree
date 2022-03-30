@@ -6,48 +6,41 @@ using System.Threading.Tasks;
 
 namespace BinarySearchTree
 {
-    public class BinarySearchTree<T> where T : IComparable //<T>
+    public class BinarySearchTree<T> where T : IComparable
     {
-        public T NodeData { get; set; }
+        public T Nodedata { get; set; }
         public BinarySearchTree<T> LeftTree { get; set; }
         public BinarySearchTree<T> RightTree { get; set; }
-
-        public BinarySearchTree(T nodeData)
+        public BinarySearchTree(T Nodedata)
         {
-            this.NodeData = nodeData;
+            this.Nodedata = Nodedata;
             this.LeftTree = null;
             this.RightTree = null;
         }
-
-        int leftCount = 0;
-        int rightCount = 0;
-        bool result = false;
-        public void Insert(T item)
+        public void Insert(T Value)
         {
-            T currentNodeValue = this.NodeData;
-            if ((currentNodeValue.CompareTo(item)) > 0)
+            T Root = this.Nodedata;
+            if (Root.CompareTo(Value) > 0)
             {
                 if (this.LeftTree == null)
                 {
-                    this.LeftTree = new BinarySearchTree<T>(item);
+                    this.LeftTree = new BinarySearchTree<T>(Value);
                 }
                 else
                 {
-                    this.LeftTree.Insert(item);
+                    this.LeftTree.Insert(Value);
                 }
-                this.leftCount++;
             }
             else
             {
                 if (this.RightTree == null)
                 {
-                    this.RightTree = new BinarySearchTree<T>(item);
+                    this.RightTree = new BinarySearchTree<T>(Value);
                 }
                 else
                 {
-                    this.RightTree.Insert(item);
+                    this.RightTree.Insert(Value);
                 }
-                this.rightCount++;
             }
         }
         public void Display()
@@ -56,7 +49,7 @@ namespace BinarySearchTree
             {
                 this.LeftTree.Display();
             }
-            Console.WriteLine(this.NodeData.ToString());
+            Console.WriteLine(this.Nodedata.ToString());
             if (this.RightTree != null)
             {
                 this.RightTree.Display();
