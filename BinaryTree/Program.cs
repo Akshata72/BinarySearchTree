@@ -13,11 +13,15 @@ namespace BinarySearchTree
             binarySearchTree.Insert(45);
             binarySearchTree.Insert(85);
             binarySearchTree.Insert(77);
+            binarySearchTree.Insert(63);
             binarySearchTree.Insert(25);
             binarySearchTree.Insert(64);
 
             binarySearchTree.Display();
             binarySearchTree.Getsize();
+
+            Console.WriteLine("------------------------");
+            binarySearchTree.Search(63, binarySearchTree);
         }
     }
 }
